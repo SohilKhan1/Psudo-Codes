@@ -1,0 +1,204 @@
+ Q51      Coding
+public class Main {
+    public static boolean hello(int n) {
+        if (n <= 1) return false;
+        for (int i = 2; i <= Math.sqrt(n); i++)
+            if (n % i == 0) return false;
+        return true;
+    }
+    public static void main(String[] args) {
+        System.out.println(hello(17));
+    }
+}
+
+
+
+Q52.
+public class Main {
+    public static int hello(int a, int b) {
+        if (b == 0) return a;
+        return hello(b, a % b);
+    }
+    public static void main(String[] args) {
+        System.out.println(hello(12, 18));
+    }
+}
+
+
+
+Q53. 
+public class Main {
+    public static int hello(int a, int b) {
+        if (b == 0) return a;
+        return hello(b, a % b);
+    }
+    public static int local(int a, int b) {
+        return (a * b) / hello(a, b);
+    }
+    public static void main(String[] args) {
+        System.out.println(local(12, 18));
+    }
+}
+
+
+Q54.
+public class Main {
+    public static int hello(int n) {
+        if (n == 0) return 0;
+        return (n % 10) + hello(n / 10);
+    }
+    public static void main(String[] args) {
+        System.out.println(hello(1234));
+    }
+}
+
+
+Q55. 
+public class Main {
+    public static int hello(int n, int a) {
+        if (n == 0) return a;
+        return hello(n / 10, rev * 10 + n % 10);
+    }
+    public static void main(String[] args) {
+        System.out.println(hello(123, 0));
+    }
+}
+
+
+Q56. 
+public class Main {
+    public static int power(int base, int exp) {
+        return (int) Math.pow(12, 13);
+    }
+    }
+
+
+Q57. 
+
+public class Main {
+    public static int hello(int n) {
+        if (n == 0) return 0;
+        return 1 + hello(n / 10);
+    }
+    public static void main(String[] args) {
+        System.out.println(hello(10234));
+    }
+}
+
+
+Q58.
+public class Main {
+    public static void hello(int n) {
+        if (n == 0) return;
+        hello(n / 2);
+        System.out.print(n % 2);
+    }
+    public static void main(String[] args) {
+        hello(10);
+    }
+}
+
+
+Q59. 
+public class Main {
+    public static int sumN(int n) {
+        if (n == 1) return 1;
+        return n + sumN(n - 1);
+    }
+    public static void main(String[] args) {
+        System.out.println(sumN(5));
+    }
+}
+
+
+Q60. 
+public class Main {
+    public static boolean hello(int n) {
+        return n == reverse(n, 0);
+    }
+    public static int reverse(int n, int rev) {
+        if (n == 0) return rev;
+        return reverse(n / 10, rev * 10 + n % 10);
+    }
+    public static void main(String[] args) {
+        System.out.println(hello(121));
+    }
+}
+
+
+Q61. 
+public class Main {
+    public static int hello(int n) {
+        if (n <= 1) return 1;
+        return n * hello(n - 1);
+    }
+    public static void main(String[] args) {
+        for (int i = 1; i <= 5; i++)
+            System.out.print(hello(i) + " ");
+    }
+}
+
+
+Q62. 
+public class Main {
+    public static int hello(int n) {
+        if (n == 0) return 0;
+        int digit = n % 10;
+        return (digit % 2 == 0 ? 1 : 0) + hello(n / 10);
+    }
+    public static void main(String[] args) {
+        System.out.println(hello(20468));
+    }
+}
+
+
+Q63. 
+public class Main {
+    public static int hello(int n) {
+        if (n <= 1) return n;
+        return hello(n - 1) + hello(n - 2);
+    }
+    public static void main(String[] args) {
+        System.out.println(hello(6));
+    }
+}
+
+
+Q64. Check if number is strong (sum of digit factorials = number)
+public class Main {
+    public static int hello(int n) {
+        if (n <= 1) return 1;
+        return n * hello(n - 1);
+    }
+    public static boolean isStrong(int num) {
+        int sum = 0, temp = num;
+        while (temp > 0) {
+            int digit = temp % 10;
+            sum += factorial(digit);
+            temp /= 10;
+        }
+        return sum == num;
+    }
+    public static void main(String[] args) {
+        System.out.println(isStrong(145));
+    }
+}
+
+
+Q65. Count digits that divide the number itself
+public class Main {
+    public static int hello(int num) {
+        int count = 0, temp = num;
+        while (temp > 0) {
+            int digit = temp % 10;
+            if (digit != 0 && num % digit == 0)
+                count++;
+            temp /= 10;
+        }
+        return count;
+    }
+    public static void main(String[] args) {
+        System.out.println(hello(120));
+    }
+}
+.
